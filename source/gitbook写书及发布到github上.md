@@ -224,10 +224,12 @@ v10.16.0
 
    ![gitbook003](.\images\gitbook003.png)
 
-   
+   至此全部操作已经完成，接下来每次在本地更新书籍内容后，先生成静态页面，然后提交master分支，再提交、`gh-pages`分支就可以了。
+
+   最后通过下面地址访问线上内容： `https://github.com/dolojia/gitboook`
 
    
-
+   
    
    
    
