@@ -2,7 +2,7 @@
 
 ---
 
-# gitbook写书及发布到github上
+# 使用gitbook搭建博客
 
 ### 一、 安装node
 

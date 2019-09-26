@@ -5,5 +5,5 @@
 * 开源项目
 * Linux
 * blog
-    * [gitbook写书及发布到github上](./source/gitbook写书及发布到github上.md)
+    * [使用gitbook搭建博客](./source/使用gitbook搭建博客.md)
 
