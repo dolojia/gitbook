@@ -198,14 +198,37 @@ v10.16.0
 
 ### 五、发布到github
 
-1. 在git上创建两个项目
+1. 在git上创建项目`gitbook`
 
-   * `gb-source` 存放整个gitbook文件(执行gitbook init命令的文件夹文件)
-   * `gb-pages` 存放`gb-source\_book`文件夹文件用于发布展示，在git上发布为GitHub Pages
+   * 将本地gitbook文件与GitHub上项目同步
 
-2. 设置GitHub Pages
+     ```shell
+     gi$ git init
+     $ git add .
+     $ git commit -m "first commit"
+     $ git remote add origin https://github.com/dolojia/gitboook.git
+     $ git push -u origin master
+     ```
 
-   * 在gb-pages的Settings下配置
+   2. 在本地创建`gh-pages`分支
 
+      ```shell
+   $ git checkout -b gh-pages
+      $ git push
+      $ git push --set-upstream origin gh-pages
+      ```
+      
+      删除分支下文件，只保留`_book/`目录下文件的文件及`.git`文件夹，提交文件至`gh-pages`分支。
+      
+   * 提交完成后到github仓库的设置中看一下，gh-pages服务是否自动开启，如果没有的话在`Source`中选择`gh-pages branch`，保存刷新，等待几分钟就好了
+
+   ![gitbook003](.\images\gitbook003.png)
+
+   
+
+   
+
+   
+   
    
 
