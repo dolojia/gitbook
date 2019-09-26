@@ -158,79 +158,98 @@ v10.16.0
 
 2. 关于`book.json`字段的介绍
 
-* title: 书籍标题
-* author:书籍作者
-* description: 本书描述
-* language:语言(中文设置 "zh-hans" 即可)
-* gitbook:gitbook的版本
-* styles:自定义样式
-* structure: readme文件的位置(指定 Readme、Summary、Glossary 和 Languages 对应的文件名)
-* links:链接跳转{在左侧导航栏添加链接信息}
-* plugins:插件
-* pluginsConfig:配置插件的属性
+   * title: 书籍标题
+   * author:书籍作者
+   * description: 本书描述
+   * language:语言(中文设置 "zh-hans" 即可)
+   * gitbook:gitbook的版本
+   * styles:自定义样式
+   * structure: readme文件的位置(指定 Readme、Summary、Glossary 和 Languages 对应的文件名)
+   * links:链接跳转{在左侧导航栏添加链接信息}
+   * plugins:插件
+   * pluginsConfig:配置插件的属性
 
 3. 插件介绍
 
-   GitBook 有 [插件官网](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2F)，默认带有 5 个插件，highlight、search、sharing、font-settings、livereload，如果要去除自带的插件， 可以在插件名称前面加 `-`，比如：
+   * GitBook 有 [插件官网](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2F)，默认带有 5 个插件，highlight、search、sharing、font-settings、livereload，如果要去除自带的插件， 可以在插件名称前面加 `-`，比如：
 
-   ```bash
-   "plugins": [
-       "-search"
-   ]
-   ```
+     ```shell
+     "plugins": [
+         "-search"
+     ]
+     ```
 
-   如果要配置使用的插件可以在 book.json 文件中加入即可，比如我们添加 [plugin-github](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2Fplugin%2Fgithub)，我们在 book.json 中加入配置如下即可：
+   * 如果要配置使用的插件可以在 book.json 文件中加入即可，比如我们添加 [plugin-github](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2Fplugin%2Fgithub)，我们在 book.json 中加入配置如下即可：
 
-   ```json
-   {
-       "plugins": [ "github" ],
-       "pluginsConfig": {
-           "github": {
-               "url": "https://github.com/your/repo"
-           }
-       }
-   }
-   ```
+     ```shell
+     {
+         "plugins": [ "github" ],
+         "pluginsConfig": {
+             "github": {
+                 "url": "https://github.com/your/repo"
+             }
+         }
+     }
+     ```
 
-   然后在终端输入 `gitbook install ./` 即可。
+     然后在终端输入 `gitbook install ./` 即可。
 
-   如果要指定插件的版本可以使用 plugin@0.3.1，因为一些插件可能不会随着 GitBook 版本的升级而升级。
+     如果要指定插件的版本可以使用 plugin@0.3.1，因为一些插件可能不会随着 GitBook 版本的升级而升级。
 
 ### 五、发布到github
 
-1. 在git上创建项目`gitbook`
+* 在git上创建项目`gitbook`
 
-   * 将本地gitbook文件与GitHub上项目同步
+- 将本地gitbook文件与GitHub上项目同步
+
+  ```shell
+  gi$ git init
+  $ git add .
+  $ git commit -m "first commit"
+  $ git remote add origin https://github.com/dolojia/gitboook.git
+  $ git push -u origin master
+  ```
+
+* 在本地创建`gh-pages`分支
+
+  ```shell
+  $ git checkout -b gh-pages
+  $ git push
+  $ git push --set-upstream origin gh-pages
+  ```
+
+​		删除分支下文件，只保留`_book/`目录下文件的文件及`.git`文件夹，提交文件至`gh-pages`分支。
+
+- 提交完成后到github仓库的设置中看一下，gh-pages服务是否自动开启，如果没有的话在`Source`中选择`gh-pages branch`，保存刷新，等待几分钟就好了
+
+![gitbook003](.\images\gitbook003.png)
+
+### 六、自动发发布脚本
+
+   * 以上操作过于繁杂，避免每次更新文件都要倒腾，写一个自动提交代码脚本自动同步代码至`master`跟`gh-pages`分支，创建文件`push-gitbook.sh`,内容如下：
 
      ```shell
-     gi$ git init
-     $ git add .
-     $ git commit -m "first commit"
-     $ git remote add origin https://github.com/dolojia/gitboook.git
-     $ git push -u origin master
+     cd gitbook &&\
+     git checkout master &&\
+     gitbook init &&\
+     gitbook build &&\
+     git add . &&\
+     git commit -m 'update gitbook' &&\
+     git push origin master &&\
+     git checkout gh-pages &&\
+     rm -rf * &&\
+     git checkout master -- _book &&\
+     mv _book/* ./ &&\
+     rm -rf _book &&\
+     rm -rf publish.sh &&\
+     git add . &&\
+     git commit -m 'push-gitbook.sh gh-pages' &&\
+     git push origin gh-pages &&\
+     git checkout master
      ```
 
-   2. 在本地创建`gh-pages`分支
+### 七、END
 
-      ```shell
-   $ git checkout -b gh-pages
-      $ git push
-      $ git push --set-upstream origin gh-pages
-      ```
-      
-      删除分支下文件，只保留`_book/`目录下文件的文件及`.git`文件夹，提交文件至`gh-pages`分支。
-      
-   * 提交完成后到github仓库的设置中看一下，gh-pages服务是否自动开启，如果没有的话在`Source`中选择`gh-pages branch`，保存刷新，等待几分钟就好了
-
-   ![gitbook003](.\images\gitbook003.png)
-
-   至此全部操作已经完成，接下来每次在本地更新书籍内容后，先生成静态页面，然后提交master分支，再提交、`gh-pages`分支就可以了。
-
-   最后通过下面地址访问线上内容： `https://github.com/dolojia/gitboook`
-
-   
-   
-   
-   
-   
+* 至此全部操作已经完成，接下来每次在本地更新书籍内容后，先生成静态页面，然后提交master分支，再提交、`gh-pages`分支就可以了。
+* 最后通过下面地址访问线上内容： `https://github.com/dolojia/gitboook`
 
