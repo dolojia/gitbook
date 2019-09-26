@@ -215,6 +215,232 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x4F7F;&#x7528;gitbook&#x642D;&#x5EFA;&#x535A;&#x5BA2;">&#x4F7F;&#x7528;gitbook&#x642D;&#x5EFA;&#x535A;&#x5BA2;</h1>
+<h3 id="&#x4E00;&#x3001;-&#x5B89;&#x88C5;node">&#x4E00;&#x3001; &#x5B89;&#x88C5;node</h3>
+<p>&#x68C0;&#x67E5;node&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</p>
+<pre><code class="lang-shell">$ node -v
+v10.16.0
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;&#x5B89;&#x88C5;gitbook">&#x4E8C;&#x3001;&#x5B89;&#x88C5;gitbook</h3>
+<ol>
+<li><p>&#x5B89;&#x88C5;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-shell">npm install gitbook-cli -g
+</code></pre>
+</li>
+<li><p>&#x521D;&#x59CB;&#x5316;&#x9879;&#x76EE;(&#x65B0;&#x5EFA;&#x6587;&#x4EF6;)</p>
+<pre><code class="lang-shell">$ gitbook init
+warn: no summary file in this book
+info: create README.md
+info: create SUMMARY.md
+info: initialization is finished
+</code></pre>
+</li>
+<li><p>&#x542F;&#x52A8;&#x670D;&#x52A1;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x8F93;&#x5165; <code>http://localhost:4000</code> &#x4FBF;&#x53EF;&#x9884;&#x89C8;&#x4E66;&#x7C4D;</p>
+<pre><code class="lang-shell">$ gitbook serve
+Starting server ...
+Serving book on http://localhost:4000
+</code></pre>
+</li>
+<li><p>&#x66F4;&#x591A;&#x547D;&#x4EE4;&#x4ECB;&#x7ECD;</p>
+<pre><code class="lang-shell">gitbook build  #&#x751F;&#x6210;&#x7F51;&#x9875;&#x800C;&#x4E0D;&#x5F00;&#x542F;&#x670D;&#x52A1;&#x5668;
+</code></pre>
+</li>
+</ol>
+<h3 id="&#x4E09;&#x3001;&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;">&#x4E09;&#x3001;&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;</h3>
+<ol>
+<li><p>&#x4F7F;&#x7528;<code>gitbook init</code>&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;<code>README.md</code>&#x548C;<code>SUMMARY.md</code></p>
+<ul>
+<li><code>README.md</code>&#x4F7F;&#x7528;&#x8FC7;<code>git</code>&#x7684;&#x90FD;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;</li>
+<li><code>SUMMARY.md</code>&#x5C31;&#x662F;&#x81EA;&#x5DF1;&#x8981;&#x5199;&#x6587;&#x7AE0;<strong>&#x7AE0;&#x8282;&#x76EE;&#x5F55;</strong></li>
+</ul>
+</li>
+<li><p>&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x5982;&#x4E0B;</p>
+<p><img src="images/gitbook001.png" alt="gitbook001"></p>
+</li>
+<li><p>&#x53D1;&#x5E03;&#x540E;&#x7F51;&#x9875;&#x6837;&#x5F0F;</p>
+<p><img src="images/gitbook002.png" alt="gitbook002"></p>
+</li>
+</ol>
+<h3 id="&#x56DB;&#x3001;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x914D;&#x7F6E;">&#x56DB;&#x3001;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x914D;&#x7F6E;</h3>
+<ol>
+<li><p>&#x5728;&#x4E66;&#x7C4D;&#x4E0B;&#x9762;&#x90FD;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>book.json</code></p>
+<pre><code class="lang-shell">{
+  &quot;title&quot;: &quot;&#x6807;&#x9898;&quot;,
+  &quot;author&quot;: &quot;&#x4F5C;&#x8005;&quot;,
+  &quot;description&quot;: &quot;&#x7B80;&#x5355;&#x63CF;&#x7D20;&quot;,
+  &quot;language&quot;: &quot;zh-hans&quot;, 
+  &quot;gitbook&quot;: &quot;3.2.3&quot;, 
+  &quot;styles&quot;: {
+    &quot;website&quot;: &quot;./styles/website.css&quot; 
+  },
+  &quot;structure&quot;: {
+    &quot;readme&quot;: &quot;README.md&quot; 
+  },
+  &quot;links&quot;: {
+    &quot;sidebar&quot;: {
+      &quot;&#x6211;&#x7684;&#x535A;&#x5BA2;&quot;: &quot;https://blog.csdn.net/kuangshp128&quot; 
+    }
+  },
+  &quot;plugins&quot;: [ 
+    &quot;-sharing&quot;,
+    &quot;splitter&quot;,
+    &quot;expandable-chapters-small&quot;,
+    &quot;anchors&quot;,
+
+    &quot;github&quot;,
+    &quot;github-buttons&quot;,
+    &quot;donate&quot;,
+    &quot;sharing-plus&quot;,
+    &quot;anchor-navigation-ex&quot;,
+    &quot;favicon&quot;
+  ],
+  &quot;pluginsConfig&quot;: {
+    &quot;github&quot;: {
+      &quot;url&quot;: &quot;https://github.com/kuangshp/&quot;
+    },
+    &quot;github-buttons&quot;: {
+      &quot;buttons&quot;: [{
+        &quot;user&quot;: &quot;kuangshp&quot;,
+        &quot;repo&quot;: &quot;mysql&quot;,
+        &quot;type&quot;: &quot;star&quot;,
+        &quot;size&quot;: &quot;small&quot;,
+        &quot;count&quot;: true
+      }]
+    },
+    &quot;donate&quot;: {
+      &quot;alipay&quot;: &quot;./source/images/donate.png&quot;,
+      &quot;title&quot;: &quot;&quot;,
+      &quot;button&quot;: &quot;&#x8D5E;&#x8D4F;&quot;,
+      &quot;alipayText&quot;: &quot; &quot;
+    },
+    &quot;sharing&quot;: {
+      &quot;douban&quot;: false,
+      &quot;facebook&quot;: false,
+      &quot;google&quot;: false,
+      &quot;hatenaBookmark&quot;: false,
+      &quot;instapaper&quot;: false,
+      &quot;line&quot;: false,
+      &quot;linkedin&quot;: false,
+      &quot;messenger&quot;: false,
+      &quot;pocket&quot;: false,
+      &quot;qq&quot;: false,
+      &quot;qzone&quot;: false,
+      &quot;stumbleupon&quot;: false,
+      &quot;twitter&quot;: false,
+      &quot;viber&quot;: false,
+      &quot;vk&quot;: false,
+      &quot;weibo&quot;: false,
+      &quot;whatsapp&quot;: false,
+      &quot;all&quot;: [
+        &quot;google&quot;, &quot;facebook&quot;, &quot;weibo&quot;, &quot;twitter&quot;,
+        &quot;qq&quot;, &quot;qzone&quot;, &quot;linkedin&quot;, &quot;pocket&quot;
+      ]
+    },
+    &quot;anchor-navigation-ex&quot;: {
+      &quot;showLevel&quot;: false
+    },
+    &quot;favicon&quot;: {
+      &quot;shortcut&quot;: &quot;./source/images/favicon.jpg&quot;,
+      &quot;bookmark&quot;: &quot;./source/images/favicon.jpg&quot;,
+      &quot;appleTouch&quot;: &quot;./source/images/apple-touch-icon.jpg&quot;,
+      &quot;appleTouchMore&quot;: {
+        &quot;120x120&quot;: &quot;./source/images/apple-touch-icon.jpg&quot;,
+        &quot;180x180&quot;: &quot;./source/images/apple-touch-icon.jpg&quot;
+      }
+    }
+  }
+}
+</code></pre>
+</li>
+<li><p>&#x5173;&#x4E8E;<code>book.json</code>&#x5B57;&#x6BB5;&#x7684;&#x4ECB;&#x7ECD;</p>
+<ul>
+<li>title: &#x4E66;&#x7C4D;&#x6807;&#x9898;</li>
+<li>author:&#x4E66;&#x7C4D;&#x4F5C;&#x8005;</li>
+<li>description: &#x672C;&#x4E66;&#x63CF;&#x8FF0;</li>
+<li>language:&#x8BED;&#x8A00;(&#x4E2D;&#x6587;&#x8BBE;&#x7F6E; &quot;zh-hans&quot; &#x5373;&#x53EF;)</li>
+<li>gitbook:gitbook&#x7684;&#x7248;&#x672C;</li>
+<li>styles:&#x81EA;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;</li>
+<li>structure: readme&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;(&#x6307;&#x5B9A; Readme&#x3001;Summary&#x3001;Glossary &#x548C; Languages &#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x540D;)</li>
+<li>links:&#x94FE;&#x63A5;&#x8DF3;&#x8F6C;{&#x5728;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x680F;&#x6DFB;&#x52A0;&#x94FE;&#x63A5;&#x4FE1;&#x606F;}</li>
+<li>plugins:&#x63D2;&#x4EF6;</li>
+<li>pluginsConfig:&#x914D;&#x7F6E;&#x63D2;&#x4EF6;&#x7684;&#x5C5E;&#x6027;</li>
+</ul>
+</li>
+<li><p>&#x63D2;&#x4EF6;&#x4ECB;&#x7ECD;</p>
+<ul>
+<li><p>GitBook &#x6709; <a href="https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2F" target="_blank">&#x63D2;&#x4EF6;&#x5B98;&#x7F51;</a>&#xFF0C;&#x9ED8;&#x8BA4;&#x5E26;&#x6709; 5 &#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;highlight&#x3001;search&#x3001;sharing&#x3001;font-settings&#x3001;livereload&#xFF0C;&#x5982;&#x679C;&#x8981;&#x53BB;&#x9664;&#x81EA;&#x5E26;&#x7684;&#x63D2;&#x4EF6;&#xFF0C; &#x53EF;&#x4EE5;&#x5728;&#x63D2;&#x4EF6;&#x540D;&#x79F0;&#x524D;&#x9762;&#x52A0; <code>-</code>&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-shell">&quot;plugins&quot;: [
+    &quot;-search&quot;
+]
+</code></pre>
+</li>
+<li><p>&#x5982;&#x679C;&#x8981;&#x914D;&#x7F6E;&#x4F7F;&#x7528;&#x7684;&#x63D2;&#x4EF6;&#x53EF;&#x4EE5;&#x5728; book.json &#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x5373;&#x53EF;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6DFB;&#x52A0; <a href="https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2Fplugin%2Fgithub" target="_blank">plugin-github</a>&#xFF0C;&#x6211;&#x4EEC;&#x5728; book.json &#x4E2D;&#x52A0;&#x5165;&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x5373;&#x53EF;&#xFF1A;</p>
+<pre><code class="lang-shell">{
+    &quot;plugins&quot;: [ &quot;github&quot; ],
+    &quot;pluginsConfig&quot;: {
+        &quot;github&quot;: {
+            &quot;url&quot;: &quot;https://github.com/your/repo&quot;
+        }
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165; <code>gitbook install ./</code> &#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8981;&#x6307;&#x5B9A;&#x63D2;&#x4EF6;&#x7684;&#x7248;&#x672C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; plugin@0.3.1&#xFF0C;&#x56E0;&#x4E3A;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x968F;&#x7740; GitBook &#x7248;&#x672C;&#x7684;&#x5347;&#x7EA7;&#x800C;&#x5347;&#x7EA7;&#x3002;</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="&#x4E94;&#x3001;&#x53D1;&#x5E03;&#x5230;github">&#x4E94;&#x3001;&#x53D1;&#x5E03;&#x5230;github</h3>
+<ul>
+<li><p>&#x5728;git&#x4E0A;&#x521B;&#x5EFA;&#x9879;&#x76EE;<code>gitbook</code></p>
+</li>
+<li><p>&#x5C06;&#x672C;&#x5730;gitbook&#x6587;&#x4EF6;&#x4E0E;GitHub&#x4E0A;&#x9879;&#x76EE;&#x540C;&#x6B65;</p>
+<pre><code class="lang-shell">gi$ git init
+$ git add .
+$ git commit -m &quot;first commit&quot;
+$ git remote add origin https://github.com/dolojia/gitboook.git
+$ git push -u origin master
+</code></pre>
+</li>
+<li><p>&#x5728;&#x672C;&#x5730;&#x521B;&#x5EFA;<code>gh-pages</code>&#x5206;&#x652F;</p>
+<pre><code class="lang-shell">$ git checkout -b gh-pages
+$ git push
+$ git push --set-upstream origin gh-pages
+</code></pre>
+</li>
+</ul>
+<p>&#x200B;        &#x5220;&#x9664;&#x5206;&#x652F;&#x4E0B;&#x6587;&#x4EF6;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;<code>_book/</code>&#x76EE;&#x5F55;&#x4E0B;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x53CA;<code>.git</code>&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x81F3;<code>gh-pages</code>&#x5206;&#x652F;&#x3002;</p>
+<ul>
+<li>&#x63D0;&#x4EA4;&#x5B8C;&#x6210;&#x540E;&#x5230;github&#x4ED3;&#x5E93;&#x7684;&#x8BBE;&#x7F6E;&#x4E2D;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;gh-pages&#x670D;&#x52A1;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5F00;&#x542F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#x5728;<code>Source</code>&#x4E2D;&#x9009;&#x62E9;<code>gh-pages branch</code>&#xFF0C;&#x4FDD;&#x5B58;&#x5237;&#x65B0;&#xFF0C;&#x7B49;&#x5F85;&#x51E0;&#x5206;&#x949F;&#x5C31;&#x597D;&#x4E86;</li>
+</ul>
+<p><img src="images/gitbook003.png" alt="gitbook003"></p>
+<h3 id="&#x516D;&#x3001;&#x81EA;&#x52A8;&#x53D1;&#x53D1;&#x5E03;&#x811A;&#x672C;">&#x516D;&#x3001;&#x81EA;&#x52A8;&#x53D1;&#x53D1;&#x5E03;&#x811A;&#x672C;</h3>
+<ul>
+<li><p>&#x4EE5;&#x4E0A;&#x64CD;&#x4F5C;&#x8FC7;&#x4E8E;&#x7E41;&#x6742;&#xFF0C;&#x907F;&#x514D;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x90FD;&#x8981;&#x5012;&#x817E;&#xFF0C;&#x5199;&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x811A;&#x672C;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x81F3;<code>master</code>&#x8DDF;<code>gh-pages</code>&#x5206;&#x652F;&#xFF0C;&#x521B;&#x5EFA;&#x6587;&#x4EF6;<code>push-gitbook.sh</code>,&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-shell">cd gitbook &amp;&amp;\
+git checkout master &amp;&amp;\
+gitbook init &amp;&amp;\
+gitbook build &amp;&amp;\
+git add . &amp;&amp;\
+git commit -m &apos;update gitbook&apos; &amp;&amp;\
+git push origin master &amp;&amp;\
+git checkout gh-pages &amp;&amp;\
+rm -rf * &amp;&amp;\
+git checkout master -- _book &amp;&amp;\
+mv _book/* ./ &amp;&amp;\
+rm -rf _book &amp;&amp;\
+rm -rf publish.sh &amp;&amp;\
+git add . &amp;&amp;\
+git commit -m &apos;push-gitbook.sh gh-pages&apos; &amp;&amp;\
+git push origin gh-pages &amp;&amp;\
+git checkout master
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x4E03;&#x3001;end">&#x4E03;&#x3001;END</h3>
+<ul>
+<li>&#x81F3;&#x6B64;&#x5168;&#x90E8;&#x64CD;&#x4F5C;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6BCF;&#x6B21;&#x5728;&#x672C;&#x5730;&#x66F4;&#x65B0;&#x4E66;&#x7C4D;&#x5185;&#x5BB9;&#x540E;&#xFF0C;&#x5148;&#x751F;&#x6210;&#x9759;&#x6001;&#x9875;&#x9762;&#xFF0C;&#x7136;&#x540E;&#x63D0;&#x4EA4;<code>master</code>&#x5206;&#x652F;&#xFF0C;&#x518D;&#x63D0;&#x4EA4;&#x3001;<code>gh-pages</code>&#x5206;&#x652F;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</li>
+<li>&#x6700;&#x540E;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x5730;&#x5740;&#x8BBF;&#x95EE;&#x7EBF;&#x4E0A;&#x5185;&#x5BB9;&#xFF1A; <code>https://dolojia.github.io/gitboook</code></li>
+</ul>
 
                                 
                                 </section>
@@ -250,7 +476,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"使用gitbook搭建博客","level":"1.5.1","depth":2,"previous":{"title":"blog","level":"1.5","depth":1,"ref":"","articles":[{"title":"使用gitbook搭建博客","level":"1.5.1","depth":2,"path":"source/使用gitbook搭建博客.md","ref":"./source/使用gitbook搭建博客.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"source/使用gitbook搭建博客.md","mtime":"2019-09-26T15:24:54.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-26T15:24:55.748Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"使用gitbook搭建博客","level":"1.5.1","depth":2,"previous":{"title":"blog","level":"1.5","depth":1,"ref":"","articles":[{"title":"使用gitbook搭建博客","level":"1.5.1","depth":2,"path":"source/使用gitbook搭建博客.md","ref":"./source/使用gitbook搭建博客.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"source/使用gitbook搭建博客.md","mtime":"2019-09-26T15:25:05.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-26T15:28:15.375Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
