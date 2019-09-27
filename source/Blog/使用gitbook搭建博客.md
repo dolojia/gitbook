@@ -57,11 +57,11 @@ v10.16.0
 
 2. 系统文件目录如下
 
-   ![gitbook001](./images/gitbook001.png)
+   ![gitbook001](../images/gitbook001.png)
 
 3. 发布后网页样式
 
-   ![gitbook002](./images/gitbook002.png)
+   ![gitbook002](../images/gitbook002.png)
 
 ### 四、通过配置文件来配置
 
