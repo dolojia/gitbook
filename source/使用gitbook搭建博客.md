@@ -171,7 +171,7 @@ v10.16.0
 
 3. 插件介绍
 
-   * GitBook 有 [插件官网](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2F)，默认带有 5 个插件，highlight、search、sharing、font-settings、livereload，如果要去除自带的插件， 可以在插件名称前面加 `-`，比如：
+   * GitBook 有 [插件官网](https://docs.gitbook.com/v2-changes/important-differences)，默认带有 5 个插件，highlight、search、sharing、font-settings、livereload，如果要去除自带的插件， 可以在插件名称前面加 `-`，比如：
 
      ```shell
      "plugins": [
@@ -179,14 +179,14 @@ v10.16.0
      ]
      ```
 
-   * 如果要配置使用的插件可以在 book.json 文件中加入即可，比如我们添加 [plugin-github](https://link.jianshu.com/?t=https%3A%2F%2Fplugins.gitbook.com%2Fplugin%2Fgithub)，我们在 book.json 中加入配置如下即可：
+   * 如果要配置使用的插件可以在 book.json 文件中加入即可，比如我们添加 [plugin-github](https://github.com/dolojia)，我们在 book.json 中加入配置如下即可：
 
      ```shell
      {
          "plugins": [ "github" ],
          "pluginsConfig": {
              "github": {
-                 "url": "https://github.com/your/repo"
+                 "url": "https://github.com/dolojia"
              }
          }
      }
