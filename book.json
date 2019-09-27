@@ -13,7 +13,7 @@
       "size": 2
     },
     "github": {
-      "url": "https://dolojia.github.io/gitboook"
+      "url": "https://dolojia.github.io/gitbook"
     },
     "autotheme": {
       "white": [9, 10, 11, 12, 13, 14, 15, 16, 17],
@@ -28,7 +28,7 @@
     "github-buttons": {
       "buttons": [{
         "user": "dolojia",
-        "repo": "gitboook",
+        "repo": "gitbook",
         "type": "star",
         "size": "small",
         "count": true
@@ -59,7 +59,7 @@
       ]
     },
     "tbfed-pagefooter": {
-      "copyright": "Copyright &copy <a href='hhttps://dolojia.github.io/gitboook' target='_blank'>DoloJia</a> 2019",
+      "copyright": "Copyright &copy <a href='https://dolojia.github.io/gitbook' target='_blank'>DoloJia</a> 2019",
       "modify_label": "修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
@@ -99,7 +99,7 @@
       }
     },
     "sitemap-general": {
-      "prefix": "https://dolojia.github.io/gitboook"
+      "prefix": "https://dolojia.github.io/gitbook"
     },
     "favicon": {
       "shortcut": "assets/images/favicon.ico",
@@ -134,7 +134,7 @@
   "links": {
     "sidebar": {
       "GitHub": "https://github.com/dolojia",
-      "个人博客": "https://dolojia.github.io/gitboook"
+      "个人博客": "https://dolojia.github.io/gitbook"
     }
   }
 }
