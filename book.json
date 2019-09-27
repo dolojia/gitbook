@@ -1,6 +1,9 @@
 {
   "gitbook": "3.x.x",
-  "plugins": ["favicon", "yahei", "github", "autotheme", "-lunr", "-search", "search-plus", "prism", "-highlight", "github-buttons", "splitter", "-sharing", "sharing-plus", "tbfed-pagefooter", "expandable-chapters-small", "book-summary-scroll-position-saver", "ga", "baidu", "donate", "anchors", "anchor-navigation-ex", "sitemap-general", "copy-code-button", "multipart"],
+  "plugins": ["expandable-chapters","emphasize","favicon", "yahei",  "autotheme", "-lunr", "search-plus", "-prism", 
+    "-highlight", "github-buttons", "splitter", "-sharing", "sharing-plus", "tbfed-pagefooter", 
+    "book-summary-scroll-position-saver", "ga", "baidu", "-donate", "anchors", "anchor-navigation-ex", "sitemap-general", 
+    "copy-code-button", "multipart"],
   "pluginsConfig": {
     "theme-default": {
       "showLevel": true
@@ -24,8 +27,8 @@
     },
     "github-buttons": {
       "buttons": [{
-        "user": "JoeyBling",
-        "repo": "myBook",
+        "user": "dolojia",
+        "repo": "gitboook",
         "type": "star",
         "size": "small",
         "count": true
@@ -106,14 +109,6 @@
         "120x120": "assets/images/apple-touch-icon-120x120.png",
         "180x180": "assets/images/apple-touch-icon-180x180.png"
       }
-    },
-    "mygitalk": {
-      "clientID": "608e351b48e4d0a3a528",
-      "clientSecret": "c4427860abc972f5a3c206757e304654256d4892",
-      "repo": "myBook",
-      "owner": "JoeyBling",
-      "admin": ["JoeyBling"],
-      "distractionFreeMode": false
     }
   },
   "pdf": {
