@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url> <loc>https://dolojia.github.io/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Git/忽略已经被git管理的文件.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Git/全局设置用户名邮箱配置.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/IDEA/IDEA模板设置.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Windows/Hyper-V使用.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/虚拟机安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/zookeeper.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/Linux安装redis.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/Linux安装Elasticsearch.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/Linux下java环境搭建.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/mongodb安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/mysql安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/安装RabbitMQ.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Linux/contos7防火墙关闭.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Nginx/openReaty安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Tomcat/tomcat配置详解.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Tomcat/tomcat管理页面403解决方案.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Tomcat/检测tomcat是否存活并重启.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/持续集成/Jenkins搭建文档.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Blog/使用gitbook搭建博客.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+</urlset>
