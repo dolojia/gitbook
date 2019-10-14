@@ -9,13 +9,14 @@
 <url> <loc>https://dolojia.github.io/source/Linux/Linux安装redis.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/Linux安装Elasticsearch.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/Linux下java环境搭建.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://dolojia.github.io/source/Linux/Linux下检测tomcat是否存活并重启.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/mongodb安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/mysql安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/安装RabbitMQ.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Linux/contos7防火墙关闭.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Nginx/openReaty安装.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Tomcat/tomcat配置详解.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Tomcat/tomcat管理页面403解决方案.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://dolojia.github.io/source/Tomcat/检测tomcat是否存活并重启.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/持续集成/Jenkins搭建文档.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://dolojia.github.io/source/Blog/使用gitbook搭建博客.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
