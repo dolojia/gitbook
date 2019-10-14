@@ -9,6 +9,8 @@
 * 开源项目
 
 -----
+* Windows
+    * [Hyper-V使用](./source/Windows/Hyper-V使用.md)
 * Linux
     * [虚拟机安装](./source/Linux/虚拟机安装.md)
     * [zookeeper](./source/Linux/zookeeper.md)
