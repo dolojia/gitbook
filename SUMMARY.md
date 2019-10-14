@@ -15,7 +15,6 @@
     * [Linux安装redis](./source/Linux/Linux安装redis.md)
     * [Linux安装Elasticsearch](./source/Linux/Linux安装Elasticsearch.md)
     * [Linux下java环境搭建](./source/Linux/Linux下java环境搭建.md)
-    * [Linux下检测tomcat是否存活并重启](./source/Linux/Linux下检测tomcat是否存活并重启.md)
     * [mongodb安装](./source/Linux/mongodb安装.md)
     * [mysql安装](./source/Linux/mysql安装.md)
     * [安装RabbitMQ](./source/Linux/安装RabbitMQ.md)
@@ -24,6 +23,8 @@
     * [openReaty安装](./source/Nginx/openReaty安装.md)
 * Tomcat
     * [tomcat配置详解](./source/Tomcat/tomcat配置详解.md)
+    * [tomcat管理页面403解决方案](./source/Tomcat/tomcat管理页面403解决方案.md)
+    * [检测tomcat是否存活并重启](./source/Tomcat/检测tomcat是否存活并重启.md)
 * 持续集成
     * [Jenkins搭建文档](./source/持续集成/Jenkins搭建文档.md)
 * Blog
