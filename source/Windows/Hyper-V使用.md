@@ -101,7 +101,7 @@
 
 #### 7.再配置里面这个改成yes
 
-![17](E:\idea-work\gitbook\source\images\hyper017.png)
+![17](..\images\hyper017.png)
 
 #### 8.然后重启网络
 
@@ -112,10 +112,10 @@ Restarting network (via systemctl):                        [  ok  ]
 
 #### 9.查看下ip,已经自动分配ip了
 
-![18](E:\idea-work\gitbook\source\images\hyper018.png)
+![18](..\images\hyper018.png)
 
 #### 10.测试一下访问百度也可以访问了
 
-![19](E:\idea-work\gitbook\source\images\hyper019.png)
-  
+![19](..\images\hyper019.png)
+
 
