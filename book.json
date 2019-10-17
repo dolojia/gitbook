@@ -1,7 +1,7 @@
 {
   "gitbook": "3.x.x",
-  "plugins": ["expandable-chapters","emphasize","favicon", "yahei",  "autotheme", "-lunr", "search-plus", "-prism", 
-    "-highlight", "github-buttons", "splitter", "-sharing", "sharing-plus", "tbfed-pagefooter", 
+  "plugins": ["expandable-chapters","emphasize","favicon", "yahei",  "autotheme", "-lunr", "search-plus", "prism", 
+    "highlight", "github-buttons", "splitter", "-sharing", "sharing-plus", "tbfed-pagefooter", 
     "book-summary-scroll-position-saver", "ga", "baidu", "-donate", "anchors", "anchor-navigation-ex", "sitemap-general", 
     "copy-code-button", "multipart"],
   "pluginsConfig": {
@@ -23,7 +23,10 @@
     "prism": {
       "css": [
         "prismjs/themes/prism-tomorrow.css"
-      ]
+      ],
+      "lang": {
+        "shell": "bash"
+      }
     },
     "github-buttons": {
       "buttons": [{

@@ -1,0 +1,1237 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dockerfile · DoloJia开发笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="DoloJia">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-yahei/yahei.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Docker常用命令介绍.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"dolojia","repo":"gitbook","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../assets/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../assets/images/apple-touch-icon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/apple-touch-icon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/dolojia" target="_blank" class="custom-link">GitHub</a>
+        </li>
+    
+        
+        <li>
+            <a href="#" target="_blank" class="custom-link">个人博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Git/忽略已经被git管理的文件.html">
+            
+                <a href="../Git/忽略已经被git管理的文件.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    忽略已经被git管理的文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Git/全局设置用户名邮箱配置.html">
+            
+                <a href="../Git/全局设置用户名邮箱配置.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    全局设置用户名邮箱配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    IDEA
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../IDEA/IDEA模板设置.html">
+            
+                <a href="../IDEA/IDEA模板设置.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    IDEA模板设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                        <b>1.4.</b>
+                    
+                    开源项目
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Windows
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Windows/Hyper-V使用.html">
+            
+                <a href="../Windows/Hyper-V使用.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    Hyper-V使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../Linux/虚拟机安装.html">
+            
+                <a href="../Linux/虚拟机安装.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    虚拟机安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../Linux/zookeeper.html">
+            
+                <a href="../Linux/zookeeper.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../Linux/Linux安装redis.html">
+            
+                <a href="../Linux/Linux安装redis.html">
+            
+                    
+                        <b>2.2.3.</b>
+                    
+                    Linux安装redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../Linux/Linux安装Elasticsearch.html">
+            
+                <a href="../Linux/Linux安装Elasticsearch.html">
+            
+                    
+                        <b>2.2.4.</b>
+                    
+                    Linux安装Elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../Linux/Linux下java环境搭建.html">
+            
+                <a href="../Linux/Linux下java环境搭建.html">
+            
+                    
+                        <b>2.2.5.</b>
+                    
+                    Linux下java环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../Linux/mongodb安装.html">
+            
+                <a href="../Linux/mongodb安装.html">
+            
+                    
+                        <b>2.2.6.</b>
+                    
+                    mongodb安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../Linux/mysql安装.html">
+            
+                <a href="../Linux/mysql安装.html">
+            
+                    
+                        <b>2.2.7.</b>
+                    
+                    mysql安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../Linux/安装RabbitMQ.html">
+            
+                <a href="../Linux/安装RabbitMQ.html">
+            
+                    
+                        <b>2.2.8.</b>
+                    
+                    安装RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../Linux/contos7防火墙关闭.html">
+            
+                <a href="../Linux/contos7防火墙关闭.html">
+            
+                    
+                        <b>2.2.9.</b>
+                    
+                    contos7防火墙关闭
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Docker系列
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="CentOS 7安装Docker.html">
+            
+                <a href="CentOS 7安装Docker.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    CentOS 7安装Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="Docker常用命令介绍.html">
+            
+                <a href="Docker常用命令介绍.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    Docker常用命令介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.3" data-path="Dockerfile.html">
+            
+                <a href="Dockerfile.html">
+            
+                    
+                        <b>2.3.3.</b>
+                    
+                    Dockerfile
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                        <b>2.4.</b>
+                    
+                    Nginx
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../Nginx/openReaty安装.html">
+            
+                <a href="../Nginx/openReaty安装.html">
+            
+                    
+                        <b>2.4.1.</b>
+                    
+                    openReaty安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                        <b>2.5.</b>
+                    
+                    Tomcat
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Tomcat/tomcat配置详解.html">
+            
+                <a href="../Tomcat/tomcat配置详解.html">
+            
+                    
+                        <b>2.5.1.</b>
+                    
+                    tomcat配置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../Tomcat/tomcat管理页面403解决方案.html">
+            
+                <a href="../Tomcat/tomcat管理页面403解决方案.html">
+            
+                    
+                        <b>2.5.2.</b>
+                    
+                    tomcat管理页面403解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../Tomcat/检测tomcat是否存活并重启.html">
+            
+                <a href="../Tomcat/检测tomcat是否存活并重启.html">
+            
+                    
+                        <b>2.5.3.</b>
+                    
+                    检测tomcat是否存活并重启
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../Tomcat/Tomcat部署错误集锦.html">
+            
+                <a href="../Tomcat/Tomcat部署错误集锦.html">
+            
+                    
+                        <b>2.5.4.</b>
+                    
+                    Tomcat部署错误集锦
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <span>
+            
+                    
+                        <b>2.6.</b>
+                    
+                    持续集成
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../持续集成/Jenkins搭建文档.html">
+            
+                <a href="../持续集成/Jenkins搭建文档.html">
+            
+                    
+                        <b>2.6.1.</b>
+                    
+                    Jenkins搭建文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" >
+            
+                <span>
+            
+                    
+                        <b>2.7.</b>
+                    
+                    Blog
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../ELKF/ELKF日志管理平台搭建.html">
+            
+                <a href="../ELKF/ELKF日志管理平台搭建.html">
+            
+                    
+                        <b>2.7.1.</b>
+                    
+                    ELKF日志管理平台搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../Blog/使用gitbook搭建博客.html">
+            
+                <a href="../Blog/使用gitbook搭建博客.html">
+            
+                    
+                        <b>2.7.2.</b>
+                    
+                    使用gitbook搭建博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Dockerfile</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#dockerfile"><b>1. </b>Dockerfile</a></li><ul><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;"><b>1.1.1. </b>&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;</a></li><li><span class="title-icon "></span><a href="#from"><b>1.1.2. </b>FROM</a></li><li><span class="title-icon "></span><a href="#maintainer"><b>1.1.3. </b>MAINTAINER</a></li><li><span class="title-icon "></span><a href="#cmd"><b>1.1.4. </b>CMD</a></li><li><span class="title-icon "></span><a href="#expose"><b>1.1.5. </b>EXPOSE</a></li><li><span class="title-icon "></span><a href="#env"><b>1.1.6. </b>ENV</a></li><li><span class="title-icon "></span><a href="#add"><b>1.1.7. </b>ADD</a></li><li><span class="title-icon "></span><a href="#copy"><b>1.1.8. </b>COPY</a></li><li><span class="title-icon "></span><a href="#entrypoint"><b>1.1.9. </b>ENTRYPOINT</a></li><li><span class="title-icon "></span><a href="#volume"><b>1.1.10. </b>VOLUME</a></li><li><span class="title-icon "></span><a href="#user"><b>1.1.11. </b>USER</a></li><li><span class="title-icon "></span><a href="#workdir"><b>1.1.12. </b>WORKDIR</a></li><li><span class="title-icon "></span><a href="#onbuild"><b>1.1.13. </b>ONBUILD</a></li><li><span class="title-icon "></span><a href="#dockerfile-examples"><b>1.1.14. </b>Dockerfile Examples</a></li><li><span class="title-icon "></span><a href="#docker-build"><b>1.1.15. </b>docker build</a></li><li><span class="title-icon "></span><a href="#dockerfile-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><b>1.1.16. </b>dockerfile &#x6700;&#x4F73;&#x5B9E;&#x8DF5;</a></li></ul></ul></ul></div><a href="#dockerfile" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="dockerfile"><a name="dockerfile" class="anchor-navigation-ex-anchor" href="#dockerfile"><i class="fa fa-link" aria-hidden="true"></i></a>1. Dockerfile</h1>
+<p>Dockerfile &#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x521B;&#x5EFA;&#x955C;&#x50CF;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;docker build&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x6839;&#x636E; Dockerfile &#x7684;&#x5185;&#x5BB9;&#x6784;&#x5EFA;&#x955C;&#x50CF;</p>
+<h3 id="&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;"><a name="&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;</h3>
+<pre class="language-"><code class="lang-tex">Dockerfile &#x6709;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#x9009;&#x9879;:
+FROM
+MAINTAINER
+RUN
+CMD
+EXPOSE
+ENV
+ADD
+COPY
+ENTRYPOINT
+VOLUME
+USER
+WORKDIR
+ONBUILD
+</code></pre>
+<h3 id="from"><a name="from" class="anchor-navigation-ex-anchor" href="#from"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. FROM</h3>
+<pre class="language-"><code class="lang-shell">FROM <span class="token operator">&lt;</span>image<span class="token operator">&gt;</span>
+</code></pre>
+<ul>
+<li>FROM&#x6307;&#x5B9A;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x7684;&#x57FA;&#x7840;&#x6E90;&#x955C;&#x50CF;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x5219;&#x4F1A;&#x81EA;&#x52A8;&#x4ECE; Docker &#x7684;&#x516C;&#x5171;&#x5E93; pull &#x955C;&#x50CF;&#x4E0B;&#x6765;&#x3002;</li>
+<li>FROM&#x5FC5;&#x987B;&#x662F; Dockerfile &#x4E2D;&#x975E;&#x6CE8;&#x91CA;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#xFF0C;&#x5373;&#x4E00;&#x4E2A; Dockerfile &#x4ECE;FROM&#x8BED;&#x53E5;&#x5F00;&#x59CB;&#x3002;</li>
+<li>FROM&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A; Dockerfile &#x4E2D;&#x51FA;&#x73B0;&#x591A;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x9700;&#x6C42;&#x5728;&#x4E00;&#x4E2A; Dockerfile &#x4E2D;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x955C;&#x50CF;&#x3002;</li>
+<li>&#x5982;&#x679C;FROM&#x8BED;&#x53E5;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x955C;&#x50CF;&#x6807;&#x7B7E;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;latest&#x6807;&#x7B7E;&#x3002;</li>
+</ul>
+<h3 id="maintainer"><a name="maintainer" class="anchor-navigation-ex-anchor" href="#maintainer"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. MAINTAINER</h3>
+<pre class="language-"><code class="lang-shell">MAINTAINER <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+</code></pre>
+<ul>
+<li><p>&#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x955C;&#x50CF;&#x7684;&#x7528;&#x6237;</p>
+</li>
+<li><p>RUN &#x6709;&#x4E24;&#x79CD;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</p>
+<ul>
+<li>RUN</li>
+<li>RUN  <a href="http://opskumu.github.io/exec form" target="_blank">&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;</a></li>
+</ul>
+</li>
+</ul>
+<p>&#x6BCF;&#x6761;RUN&#x6307;&#x4EE4;&#x5C06;&#x5728;&#x5F53;&#x524D;&#x955C;&#x50CF;&#x57FA;&#x7840;&#x4E0A;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x63D0;&#x4EA4;&#x4E3A;&#x65B0;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x540E;&#x7EED;&#x7684;RUN&#x90FD;&#x5728;&#x4E4B;&#x524D;RUN&#x63D0;&#x4EA4;&#x540E;&#x7684;&#x955C;&#x50CF;&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x955C;&#x50CF;&#x662F;&#x5206;&#x5C42;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x955C;&#x50CF;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x63D0;&#x4EA4;&#x70B9;&#x6765;&#x521B;&#x5EFA;&#xFF0C;&#x7C7B;&#x4F3C;&#x6E90;&#x7801;&#x7684; <a href="http://lib.csdn.net/base/git" target="_blank">&#x7248;&#x672C;&#x63A7;&#x5236;</a> &#x3002;</p>
+<p>exec &#x65B9;&#x5F0F;&#x4F1A;&#x88AB;&#x89E3;&#x6790;&#x4E3A;&#x4E00;&#x4E2A; JSON &#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x800C;&#x4E0D;&#x662F;&#x5355;&#x5F15;&#x53F7;&#x3002;exec &#x65B9;&#x5F0F;&#x4E0D;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x4E2A;&#x547D;&#x4EE4; shell&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x5C31;&#x4E0D;&#x4F1A;&#x7EE7;&#x627F;&#x76F8;&#x5E94;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-shell">RUN <span class="token punctuation">[</span> <span class="token string">&quot;echo&quot;</span>, <span class="token string">&quot;<span class="token environment constant">$HOME</span>&quot;</span> <span class="token punctuation">]</span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x4E0D;&#x4F1A;&#x8FBE;&#x5230;&#x8F93;&#x51FA; HOME &#x53D8;&#x91CF;&#x7684;&#xFF0C;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5F0F;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;</p>
+<pre class="language-"><code class="lang-shell">RUN <span class="token punctuation">[</span> <span class="token string">&quot;sh&quot;</span>, <span class="token string">&quot;-c&quot;</span>, <span class="token string">&quot;echo&quot;</span>, <span class="token string">&quot;<span class="token environment constant">$HOME</span>&quot;</span> <span class="token punctuation">]</span>
+</code></pre>
+<p>RUN&#x4EA7;&#x751F;&#x7684;&#x7F13;&#x5B58;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x662F;&#x4E0D;&#x4F1A;&#x5931;&#x6548;&#x7684;&#xFF0C;&#x4F1A;&#x88AB;&#x91CD;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;--no-cache&#x9009;&#x9879;&#xFF0C;&#x5373;docker build --no-cache&#xFF0C;&#x5982;&#x6B64;&#x4FBF;&#x4E0D;&#x4F1A;&#x7F13;&#x5B58;&#x3002;</p>
+<h3 id="cmd"><a name="cmd" class="anchor-navigation-ex-anchor" href="#cmd"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. CMD</h3>
+<p>CMD&#x6709;&#x4E09;&#x79CD;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;:</p>
+<ul>
+<li>CMD  <a href="http://opskumu.github.io/exec form, this is the preferred form, &#x4F18;&#x5148;&#x9009;&#x62E9;" target="_blank">&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;</a></li>
+<li>CMD  <a href="http://opskumu.github.io/as default parameters to `ENTRYPOINT`" target="_blank">&quot;param1&quot;,&quot;param2&quot;</a></li>
+<li>CMD command param1 param2 (shell form)</li>
+</ul>
+<p>CMD&#x6307;&#x5B9A;&#x5728; Dockerfile &#x4E2D;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x5219;&#x53EA;&#x6709;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F1A;&#x751F;&#x6548;&#x3002;</p>
+<p>CMD&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x5728;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x65F6;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x9009;&#x9879;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x4F1A;&#x8986;&#x76D6;&#x6389;CMD&#x6307;&#x5B9A;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<blockquote>
+<p>CMD&#x4F1A;&#x5728;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;build &#x65F6;&#x4E0D;&#x6267;&#x884C;&#xFF0C;&#x800C;RUN&#x53EA;&#x662F;&#x5728;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x540E;&#x7EED;&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x5C31;&#x4E0E;RUN&#x65E0;&#x5173;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x521D;&#x5B66;&#x8005;&#x5BB9;&#x6613;&#x5F04;&#x6DF7;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x6CE8;&#x89E3;&#x4E00;&#x4E0B;&#x3002;</p>
+</blockquote>
+<h3 id="expose"><a name="expose" class="anchor-navigation-ex-anchor" href="#expose"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.5. EXPOSE</h3>
+<pre class="language-"><code class="lang-shell">EXPOSE <span class="token operator">&lt;</span>port<span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>port<span class="token operator">&gt;</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x544A;&#x8BC9; Docker &#x670D;&#x52A1;&#x7AEF;&#x5BB9;&#x5668;&#x5BF9;&#x5916;&#x6620;&#x5C04;&#x7684;&#x672C;&#x5730;&#x7AEF;&#x53E3;&#xFF0C;&#x9700;&#x8981;&#x5728; docker run &#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;-p&#x6216;&#x8005;-P&#x9009;&#x9879;&#x751F;&#x6548;&#x3002;</p>
+<h3 id="env"><a name="env" class="anchor-navigation-ex-anchor" href="#env"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.6. ENV</h3>
+<pre class="language-"><code class="lang-shell">ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>value<span class="token operator">&gt;</span>       <span class="token comment"># &#x53EA;&#x80FD;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;</span>
+ENV <span class="token operator">&lt;</span>key<span class="token operator">&gt;</span><span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator">&gt;</span> <span class="token punctuation">..</span>.   <span class="token comment"># &#x5141;&#x8BB8;&#x4E00;&#x6B21;&#x8BBE;&#x7F6E;&#x591A;&#x4E2A;&#x53D8;&#x91CF;</span>
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x73AF;&#x8282;&#x53D8;&#x91CF;&#xFF0C;&#x4F1A;&#x88AB;&#x540E;&#x7EED;RUN&#x6307;&#x4EE4;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x5728;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x4FDD;&#x7559;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;:</p>
+<pre class="language-"><code class="lang-shell">ENV <span class="token assign-left variable">myName</span><span class="token operator">=</span><span class="token string">&quot;John Doe&quot;</span> <span class="token assign-left variable">myDog</span><span class="token operator">=</span>Rex<span class="token punctuation">\</span> The<span class="token punctuation">\</span> Dog <span class="token punctuation">\</span>
+    <span class="token assign-left variable">myCat</span><span class="token operator">=</span>fluffy
+</code></pre>
+<p>&#x7B49;&#x540C;&#x4E8E;</p>
+<pre class="language-"><code class="lang-shell">ENV myName John Doe
+ENV myDog Rex The Dog
+ENV myCat fluffy
+</code></pre>
+<h3 id="add"><a name="add" class="anchor-navigation-ex-anchor" href="#add"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.7. ADD</h3>
+<pre class="language-"><code class="lang-shell">ADD <span class="token operator">&lt;</span>src<span class="token operator">&gt;</span><span class="token punctuation">..</span>. <span class="token operator">&lt;</span>dest<span class="token operator">&gt;</span>
+</code></pre>
+<p>ADD&#x590D;&#x5236;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x6216;&#x8005;&#x8FDC;&#x7A0B;&#x6587;&#x4EF6; URLS &#x4ECE; &#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x5230;&#x5BB9;&#x5668;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x4E2D; &#x3002;</p>
+<p>&#x652F;&#x6301;&#x901A;&#x8FC7; <a href="http://lib.csdn.net/base/go" target="_blank">Go</a> &#x7684;&#x6B63;&#x5219;&#x6A21;&#x7CCA;&#x5339;&#x914D;&#xFF0C;&#x5177;&#x4F53;&#x89C4;&#x5219;&#x53EF;&#x53C2;&#x89C1;  <a href="http://golang.org/pkg/path/filepath/#Match" target="_blank">Go filepath.Match</a></p>
+<pre class="language-"><code class="lang-shell">ADD hom* /mydir/        <span class="token comment"># adds all files starting with &quot;hom&quot;</span>
+ADD hom?.txt /mydir/    <span class="token comment"># ? is replaced with any single character</span>
+</code></pre>
+<ul>
+<li>&#x8DEF;&#x5F84;&#x5FC5;&#x987B;&#x662F;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5982;&#x679C; &#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x76EE;&#x5F55;</li>
+<li>&#x8DEF;&#x5F84;&#x5FC5;&#x987B;&#x662F; Dockerfile &#x6240;&#x5728;&#x8DEF;&#x5F84;&#x7684;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x4F1A;&#x590D;&#x5236;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x800C;&#x76EE;&#x5F55;&#x672C;&#x8EAB;&#x5219;&#x4E0D;&#x4F1A;&#x88AB;&#x590D;&#x5236;</li>
+</ul>
+<h3 id="copy"><a name="copy" class="anchor-navigation-ex-anchor" href="#copy"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.8. COPY</h3>
+<pre class="language-"><code class="lang-shell">COPY <span class="token operator">&lt;</span>src<span class="token operator">&gt;</span><span class="token punctuation">..</span>. <span class="token operator">&lt;</span>dest<span class="token operator">&gt;</span>
+</code></pre>
+<p>COPY&#x590D;&#x5236;&#x65B0;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x4ECE; &#x5E76;&#x4E14;&#x6DFB;&#x52A0;&#x5230;&#x5BB9;&#x5668;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x4E2D; &#x3002;&#x7528;&#x6CD5;&#x540C;ADD&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x4E0D;&#x540C;&#x662F;&#x4E0D;&#x80FD;&#x6307;&#x5B9A;&#x8FDC;&#x7A0B;&#x6587;&#x4EF6; URLS&#x3002;</p>
+<h3 id="entrypoint"><a name="entrypoint" class="anchor-navigation-ex-anchor" href="#entrypoint"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.9. ENTRYPOINT</h3>
+<ul>
+<li>ENTRYPOINT  <a href="http://opskumu.github.io/the preferred exec form&#xFF0C;&#x4F18;&#x5148;&#x9009;&#x62E9;" target="_blank">&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;</a></li>
+<li>ENTRYPOINT command param1 param2 (shell form)</li>
+</ul>
+<p>&#x914D;&#x7F6E;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x540E;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x53EF;&#x88AB; docker run &#x63D0;&#x4F9B;&#x7684;&#x53C2;&#x6570;&#x8986;&#x76D6;&#xFF0C;&#x800C;CMD&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x8986;&#x76D6;&#x7684;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x8986;&#x76D6;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;docker run --entrypoint&#x9009;&#x9879;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A; Dockerfile &#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;ENTRYPOINT&#xFF0C;&#x5F53;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x751F;&#x6548;&#x3002;</p>
+<h4 id="exec-form-entrypoint-&#x4F8B;&#x5B50;"><a name="exec-form-entrypoint-&#x4F8B;&#x5B50;" class="anchor-navigation-ex-anchor" href="#exec-form-entrypoint-&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="exec-form-entrypoint-&#x4F8B;&#x5B50;" class="plugin-anchor" href="#exec-form-entrypoint-&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>Exec form ENTRYPOINT &#x4F8B;&#x5B50;</h4>
+<p>&#x901A;&#x8FC7;ENTRYPOINT&#x4F7F;&#x7528; exec form &#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x7A33;&#x5B9A;&#x7684;&#x9ED8;&#x8BA4;&#x547D;&#x4EE4;&#x548C;&#x9009;&#x9879;&#xFF0C;&#x800C;&#x4F7F;&#x7528;CMD&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x4E4B;&#x5916;&#x7ECF;&#x5E38;&#x88AB;&#x6539;&#x52A8;&#x7684;&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code class="lang-shell">FROM ubuntu
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;top&quot;</span>, <span class="token string">&quot;-b&quot;</span><span class="token punctuation">]</span>
+CMD <span class="token punctuation">[</span><span class="token string">&quot;-c&quot;</span><span class="token punctuation">]</span>
+</code></pre>
+<p>&#x901A;&#x8FC7; Dockerfile &#x4F7F;&#x7528;ENTRYPOINT&#x5C55;&#x793A;&#x524D;&#x53F0;&#x8FD0;&#x884C; Apache &#x670D;&#x52A1;</p>
+<pre class="language-"><code class="lang-shell">FROM debian:stable
+RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y --force-yes apache2
+EXPOSE <span class="token number">80</span> <span class="token number">443</span>
+VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/var/www&quot;</span>, <span class="token string">&quot;/var/log/apache2&quot;</span>, <span class="token string">&quot;/etc/apache2&quot;</span><span class="token punctuation">]</span>
+ENTRYPOINT <span class="token punctuation">[</span><span class="token string">&quot;/usr/sbin/apache2ctl&quot;</span>, <span class="token string">&quot;-D&quot;</span>, <span class="token string">&quot;FOREGROUND&quot;</span><span class="token punctuation">]</span>
+</code></pre>
+<h4 id="shell-form-entrypoint-&#x4F8B;&#x5B50;"><a name="shell-form-entrypoint-&#x4F8B;&#x5B50;" class="anchor-navigation-ex-anchor" href="#shell-form-entrypoint-&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="shell-form-entrypoint-&#x4F8B;&#x5B50;" class="plugin-anchor" href="#shell-form-entrypoint-&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>Shell form ENTRYPOINT &#x4F8B;&#x5B50;</h4>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F1A;&#x5728;/bin/sh -c&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4F1A;&#x5FFD;&#x7565;&#x4EFB;&#x4F55;CMD&#x6216;&#x8005;docker run&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#xFF0C;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;docker stop&#x80FD;&#x591F;&#x505C;&#x6B62;&#x957F;&#x65F6;&#x95F4;&#x8FD0;&#x884C;ENTRYPOINT&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x786E;&#x4FDD;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;exec&#x9009;&#x9879;&#x3002;</p>
+<pre class="language-"><code>FROM ubuntu
+ENTRYPOINT exec top -b
+</code></pre><p>&#x5982;&#x679C;&#x5728;ENTRYPOINT&#x5FD8;&#x8BB0;&#x4F7F;&#x7528;exec&#x9009;&#x9879;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;CMD&#x8865;&#x4E0A;:</p>
+<pre class="language-"><code class="lang-shell">FROM ubuntu
+ENTRYPOINT <span class="token function">top</span> -b
+CMD --ignored-param1 <span class="token comment"># --ignored-param2 ... --ignored-param3 ... &#x4F9D;&#x6B64;&#x7C7B;&#x63A8;</span>
+</code></pre>
+<h3 id="volume"><a name="volume" class="anchor-navigation-ex-anchor" href="#volume"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.10. VOLUME</h3>
+<pre class="language-"><code class="lang-shell">VOLUME <span class="token punctuation">[</span><span class="token string">&quot;/data&quot;</span><span class="token punctuation">]</span>
+</code></pre>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x4ECE;&#x672C;&#x5730;&#x4E3B;&#x673A;&#x6216;&#x5176;&#x4ED6;&#x5BB9;&#x5668;&#x6302;&#x8F7D;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#xFF0C;&#x540E;&#x7EED;&#x5177;&#x4F53;&#x4ECB;&#x7ECD;&#x3002;</p>
+<h3 id="user"><a name="user" class="anchor-navigation-ex-anchor" href="#user"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.11. USER</h3>
+<pre class="language-"><code>USER daemon
+</code></pre><p>&#x6307;&#x5B9A;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x65F6;&#x7684;&#x7528;&#x6237;&#x540D;&#x6216; UID&#xFF0C;&#x540E;&#x7EED;&#x7684;RUN&#x3001;CMD&#x3001;ENTRYPOINT&#x4E5F;&#x4F1A;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x3002;</p>
+<h3 id="workdir"><a name="workdir" class="anchor-navigation-ex-anchor" href="#workdir"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.12. WORKDIR</h3>
+<pre class="language-"><code class="lang-shell">WORKDIR /path/to/workdir
+</code></pre>
+<p>&#x4E3A;&#x540E;&#x7EED;&#x7684;RUN&#x3001;CMD&#x3001;ENTRYPOINT&#x6307;&#x4EE4;&#x914D;&#x7F6E;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;WORKDIR&#x6307;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x547D;&#x4EE4;&#x5982;&#x679C;&#x53C2;&#x6570;&#x662F;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x4F1A;&#x57FA;&#x4E8E;&#x4E4B;&#x524D;&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x3002;</p>
+<pre class="language-"><code class="lang-shell">WORKDIR /a
+WORKDIR b
+WORKDIR c
+RUN <span class="token builtin class-name">pwd</span>
+</code></pre>
+<p>&#x6700;&#x7EC8;&#x8DEF;&#x5F84;&#x662F;/a/b/c&#x3002;</p>
+<p>WORKDIR&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x5728;ENV&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF;:</p>
+<pre class="language-"><code class="lang-shell">ENV DIRPATH /path
+WORKDIR <span class="token variable">$DIRPATH</span>/<span class="token variable">$DIRNAME</span>
+</code></pre>
+<p>&#x6700;&#x7EC8;&#x8DEF;&#x5F84;&#x5219;&#x4E3A; /path/$DIRNAME&#x3002;</p>
+<h3 id="onbuild"><a name="onbuild" class="anchor-navigation-ex-anchor" href="#onbuild"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.13. ONBUILD</h3>
+<pre class="language-"><code class="lang-shell">ONBUILD <span class="token punctuation">[</span>INSTRUCTION<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x5F53;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x955C;&#x50CF;&#x4F5C;&#x4E3A;&#x5176;&#x5B83;&#x65B0;&#x521B;&#x5EFA;&#x955C;&#x50CF;&#x7684;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x65F6;&#xFF0C;&#x6240;&#x6267;&#x884C;&#x7684;&#x64CD;&#x4F5C;&#x6307;&#x4EE4;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;Dockerfile &#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#x521B;&#x5EFA;&#x4E86;&#x955C;&#x50CF; image-A&#xFF1A;</p>
+<pre class="language-"><code class="lang-shell"><span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+ONBUILD ADD <span class="token builtin class-name">.</span> /app/src
+ONBUILD RUN /usr/local/bin/python-build --dir /app/src
+<span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x57FA;&#x4E8E; image-A &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x955C;&#x50CF;&#x65F6;&#xFF0C;&#x65B0;&#x7684; Dockerfile &#x4E2D;&#x4F7F;&#x7528; FROM image-A &#x6307;&#x5B9A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C; ONBUILD &#x6307;&#x4EE4;&#x5185;&#x5BB9;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x5728;&#x540E;&#x9762;&#x6DFB;&#x52A0;&#x4E86;&#x4E24;&#x6761;&#x6307;&#x4EE4;&#x3002;</p>
+<pre class="language-"><code class="lang-shell"><span class="token comment"># Automatically run the following</span>
+ADD <span class="token builtin class-name">.</span> /app/src
+RUN /usr/local/bin/python-build --dir /app/src
+</code></pre>
+<p>&#x4F7F;&#x7528;ONBUILD&#x6307;&#x4EE4;&#x7684;&#x955C;&#x50CF;&#xFF0C;&#x63A8;&#x8350;&#x5728;&#x6807;&#x7B7E;&#x4E2D;&#x6CE8;&#x660E;&#xFF0C;&#x4F8B;&#x5982; ruby:1.9-onbuild&#x3002;</p>
+<h3 id="dockerfile-examples"><a name="dockerfile-examples" class="anchor-navigation-ex-anchor" href="#dockerfile-examples"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.14. Dockerfile Examples</h3>
+<pre class="language-"><code class="lang-shell"><span class="token comment"># Nginx</span>
+<span class="token comment">#</span>
+<span class="token comment"># VERSION               0.0.1</span>
+FROM      ubuntu
+MAINTAINER Victor Vieux <span class="token operator">&lt;</span>victor@docker.com<span class="token operator">&gt;</span>
+RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y inotify-tools nginx apache2 openssh-server
+<span class="token comment"># Firefox over VNC</span>
+<span class="token comment">#</span>
+<span class="token comment"># VERSION               0.3</span>
+FROM ubuntu
+<span class="token comment"># Install vnc, xvfb in order to create a &apos;fake&apos; display and firefox</span>
+RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y x11vnc xvfb firefox
+RUN <span class="token function">mkdir</span> ~/.vnc
+<span class="token comment"># Setup a password</span>
+RUN x11vnc -storepasswd <span class="token number">1234</span> ~/.vnc/passwd
+<span class="token comment"># Autostart firefox (might not be the best way, but it does the trick)</span>
+RUN <span class="token function">bash</span> -c <span class="token string">&apos;echo &quot;firefox&quot; &gt;&gt; /.bashrc&apos;</span>
+EXPOSE <span class="token number">5900</span>
+CMD    <span class="token punctuation">[</span><span class="token string">&quot;x11vnc&quot;</span>, <span class="token string">&quot;-forever&quot;</span>, <span class="token string">&quot;-usepw&quot;</span>, <span class="token string">&quot;-create&quot;</span><span class="token punctuation">]</span>
+<span class="token comment"># Multiple images example</span>
+<span class="token comment">#</span>
+<span class="token comment"># VERSION               0.1</span>
+FROM ubuntu
+RUN <span class="token builtin class-name">echo</span> foo <span class="token operator">&gt;</span> bar
+<span class="token comment"># Will output something like ===&gt; 907ad6c2736f</span>
+FROM ubuntu
+RUN <span class="token builtin class-name">echo</span> moo <span class="token operator">&gt;</span> oink
+<span class="token comment"># Will output something like ===&gt; 695d7793cbe4</span>
+<span class="token comment"># You&#x1FBF;ll now have two images, 907ad6c2736f with /bar, and 695d7793cbe4 with</span>
+<span class="token comment"># /oink.</span>
+</code></pre>
+<h3 id="docker-build"><a name="docker-build" class="anchor-navigation-ex-anchor" href="#docker-build"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.15. docker build</h3>
+<pre class="language-"><code class="lang-shell">$ docker build --help
+Usage: docker build <span class="token punctuation">[</span>OPTIONS<span class="token punctuation">]</span> <span class="token environment constant">PATH</span> <span class="token operator">|</span> URL <span class="token operator">|</span> -
+Build a new image from the <span class="token builtin class-name">source</span> code at <span class="token environment constant">PATH</span>
+  --force-rm<span class="token operator">=</span>false     Always remove intermediate containers, even after unsuccessful builds <span class="token comment"># &#x79FB;&#x9664;&#x8FC7;&#x6E21;&#x5BB9;&#x5668;&#xFF0C;&#x5373;&#x4F7F;&#x6784;&#x5EFA;&#x5931;&#x8D25;</span>
+  --no-cache<span class="token operator">=</span>false     Do not use cache when building the image                              <span class="token comment"># &#x4E0D;&#x5B9E;&#x7528; cache        </span>
+  -q, --quiet<span class="token operator">=</span>false    Suppress the verbose output generated by the containers               
+  --rm<span class="token operator">=</span>true            Remove intermediate containers after a successful build               <span class="token comment"># &#x6784;&#x5EFA;&#x6210;&#x529F;&#x540E;&#x79FB;&#x9664;&#x8FC7;&#x6E21;&#x5C42;&#x5BB9;&#x5668;</span>
+  -t, --tag<span class="token operator">=</span><span class="token string">&quot;&quot;</span>         Repository name <span class="token punctuation">(</span>and optionally a tag<span class="token punctuation">)</span> to be applied to the resulting image <span class="token keyword">in</span> <span class="token keyword">case</span> of success
+</code></pre>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;: <a href="https://docs.docker.com/reference/builder/" target="_blank">Dockerfile Reference</a></p>
+<h3 id="dockerfile-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><a name="dockerfile-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;" class="anchor-navigation-ex-anchor" href="#dockerfile-&#x6700;&#x4F73;&#x5B9E;&#x8DF5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.16. dockerfile &#x6700;&#x4F73;&#x5B9E;&#x8DF5;</h3>
+<ul>
+<li>&#x4F7F;&#x7528;.dockerignore&#x6587;&#x4EF6;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x5728;docker build&#x8FC7;&#x7A0B;&#x4E2D;&#x66F4;&#x5FEB;&#x4E0A;&#x4F20;&#x548C;&#x66F4;&#x52A0;&#x9AD8;&#x6548;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;.dockerignore&#x6587;&#x4EF6;&#x7528;&#x6765;&#x6392;&#x9664;&#x6784;&#x5EFA;&#x955C;&#x50CF;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x3002;&#x4F8B;&#x5982;,&#x9664;&#x975E;. <a href="http://lib.csdn.net/base/git" target="_blank">Git</a> &#x5728;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x7528;&#x5230;&#xFF0C;&#x5426;&#x5219;&#x4F60;&#x5E94;&#x8BE5;&#x5C06;&#x5B83;&#x6DFB;&#x52A0;&#x5230;.dockerignore&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x5F88;&#x591A;&#x65F6;&#x95F4;&#x3002;</p>
+<ul>
+<li>&#x907F;&#x514D;&#x5B89;&#x88C5;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x8F6F;&#x4EF6;&#x5305;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x590D;&#x6742;&#x6027;&#x3001;&#x4F9D;&#x8D56;&#x6027;&#x3001;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x6784;&#x5EFA;&#x65F6;&#x95F4;&#xFF0C;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x6216;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5305;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5728;&#x4E00;&#x4E2A; <a href="http://lib.csdn.net/base/mysql" target="_blank">&#x6570;&#x636E;&#x5E93;</a> &#x955C;&#x50CF;&#x4E2D;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x3002;</p>
+<ul>
+<li>&#x6BCF;&#x4E2A;&#x5BB9;&#x5668;&#x90FD;&#x8DD1;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;</li>
+</ul>
+<p>&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x5E94;&#x8BE5;&#x53EA;&#x5355;&#x72EC;&#x8DD1;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x3002;&#x89E3;&#x8026;&#x5E94;&#x7528;&#x5230;&#x591A;&#x4E2A;&#x5BB9;&#x5668;&#x4F7F;&#x5176;&#x66F4;&#x5BB9;&#x6613;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x548C;&#x91CD;&#x7528;&#x3002;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x4F9D;&#x8D56;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;  <a href="https://docs.docker.com/userguide/dockerlinks/" target="_blank">Linking Containers Together</a> &#x3002;</p>
+<ul>
+<li>&#x6700;&#x5C0F;&#x5316;&#x5C42;</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#xFF0C;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x6B21;&#x955C;&#x50CF;&#x7684;&#x63D0;&#x4EA4;&#xFF0C;&#x955C;&#x50CF;&#x662F;&#x5206;&#x5C42;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x5BF9;&#x4E8E;Dockerfile&#xFF0C;&#x5E94;&#x8BE5;&#x627E;&#x5230;&#x53EF;&#x8BFB;&#x6027;&#x548C;&#x6700;&#x5C0F;&#x5316;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x8861;&#x3002;</p>
+<ul>
+<li>&#x591A;&#x884C;&#x53C2;&#x6570;&#x6392;&#x5E8F;</li>
+</ul>
+<p>&#x5982;&#x679C;&#x53EF;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x6765;&#x6392;&#x5E8F;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5B89;&#x88C5;&#x5305;&#x7684;&#x91CD;&#x590D;&#x5E76;&#x4E14;&#x66F4;&#x5BB9;&#x6613;&#x66F4;&#x65B0;&#x5217;&#x8868;&#xFF0C;&#x53E6;&#x5916;&#x53EF;&#x8BFB;&#x6027;&#x4E5F;&#x4F1A;&#x66F4;&#x5F3A;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x884C;&#x4F7F;&#x7528;\&#x6362;&#x884C;:</p>
+<pre class="language-"><code class="lang-shell">RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y <span class="token punctuation">\</span>
+  bzr <span class="token punctuation">\</span>
+  cvs <span class="token punctuation">\</span>
+  <span class="token function">git</span> <span class="token punctuation">\</span>
+  mercurial <span class="token punctuation">\</span>
+  subversion
+</code></pre>
+<ul>
+<li>&#x521B;&#x5EFA;&#x7F13;&#x5B58;</li>
+</ul>
+<p>&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x6309;&#x7167;Dockerfile&#x7684;&#x987A;&#x5E8F;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#xFF0C;&#x6BCF;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x6307;&#x4EE4; Docker &#x4F1A;&#x5BFB;&#x627E;&#x662F;&#x5426;&#x6709;&#x5B58;&#x5728;&#x7684;&#x955C;&#x50CF;&#x7F13;&#x5B58;&#x53EF;&#x590D;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x955C;&#x50CF;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x7F13;&#x5B58;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5728;docker build&#x65F6;&#x6DFB;&#x52A0;--no-cache=true&#x9009;&#x9879;&#x3002;</p>
+<p>&#x4ECE;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x5F00;&#x59CB;&#x5C31;&#x5DF2;&#x7ECF;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x4E86;&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x4EE4;&#x4F1A;&#x5BF9;&#x6BD4;&#x6240;&#x6709;&#x7684;&#x5B50;&#x955C;&#x50CF;&#x5BFB;&#x627E;&#x662F;&#x5426;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x7F13;&#x5B58;&#x5931;&#x6548;&#x3002;&#x5728;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x53EA;&#x5BF9;&#x6BD4;Dockerfile&#x6307;&#x4EE4;&#x548C;&#x5B50;&#x955C;&#x50CF;&#x5C31;&#x8DB3;&#x591F;&#x4E86;&#x3002;ADD&#x548C;COPY&#x6307;&#x4EE4;&#x9664;&#x5916;&#xFF0C;&#x6267;&#x884C;ADD&#x548C;COPY&#x65F6;&#x5B58;&#x653E;&#x5230;&#x955C;&#x50CF;&#x7684;&#x6587;&#x4EF6;&#x4E5F;&#x662F;&#x9700;&#x8981;&#x68C0;&#x67E5;&#x7684;&#xFF0C;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6821;&#x9A8C;&#x4E4B;&#x540E;&#x518D;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x6821;&#x9A8C;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x67E5;&#x627E;&#xFF0C;&#x5982;&#x679C;&#x68C0;&#x6D4B;&#x7684;&#x6587;&#x4EF6;&#x6539;&#x53D8;&#x5219;&#x7F13;&#x5B58;&#x5931;&#x6548;&#x3002;RUN apt-get -y update&#x547D;&#x4EE4;&#x53EA;&#x68C0;&#x67E5;&#x547D;&#x4EE4;&#x662F;&#x5426;&#x5339;&#x914D;&#xFF0C;&#x5982;&#x679C;&#x5339;&#x914D;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;&#x66F4;&#x65B0;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x4E3A;&#x4E86;&#x6709;&#x6548;&#x5730;&#x5229;&#x7528;&#x7F13;&#x5B58;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x4F60;&#x7684; Dockerfile &#x4E00;&#x81F4;&#xFF0C;&#x5E76;&#x4E14;&#x5C3D;&#x91CF;&#x5728;&#x672B;&#x5C3E;&#x4FEE;&#x6539;&#x3002;</p>
+</blockquote>
+<h4 id="dockerfile-&#x6307;&#x4EE4;"><a name="dockerfile-&#x6307;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#dockerfile-&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="dockerfile-&#x6307;&#x4EE4;" class="plugin-anchor" href="#dockerfile-&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>Dockerfile &#x6307;&#x4EE4;</h4>
+<ul>
+<li>FROM: &#x53EA;&#x8981;&#x53EF;&#x80FD;&#x5C31;&#x4F7F;&#x7528;&#x5B98;&#x65B9;&#x955C;&#x50CF;&#x5E93;&#x4F5C;&#x4E3A;&#x57FA;&#x7840;&#x955C;&#x50CF;</li>
+<li>RUN: &#x4E3A;&#x4FDD;&#x6301;&#x53EF;&#x8BFB;&#x6027;&#x3001;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#x3001;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#xFF0C;&#x628A;&#x957F;&#x6216;&#x8005;&#x590D;&#x6742;&#x7684;RUN&#x8BED;&#x53E5;&#x4F7F;&#x7528;\&#x5206;&#x9694;&#x7B26;&#x5206;&#x6210;&#x591A;&#x884C;<ul>
+<li>&#x4E0D;&#x5EFA;&#x8BAE;RUN apt-get update&#x72EC;&#x7ACB;&#x6210;&#x884C;&#xFF0C;&#x5426;&#x5219;&#x5982;&#x679C;&#x540E;&#x7EED;&#x5305;&#x6709;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;&#x66F4;&#x65B0;</li>
+<li>&#x907F;&#x514D;&#x4F7F;&#x7528;RUN apt-get upgrade&#x6216;&#x8005;dist-upgrade&#xFF0C;&#x5F88;&#x591A;&#x5FC5;&#x8981;&#x7684;&#x5305;&#x5728;&#x4E00;&#x4E2A;&#x975E;privileged&#x6743;&#x9650;&#x7684;&#x5BB9;&#x5668;&#x91CC;&#x662F;&#x65E0;&#x6CD5;&#x5347;&#x7EA7;&#x7684;&#x3002;&#x5982;&#x679C;&#x77E5;&#x9053;&#x67D0;&#x4E2A;&#x5305;&#x66F4;&#x65B0;&#xFF0C;&#x4F7F;&#x7528;apt-get install -y xxx</li>
+<li>&#x6807;&#x51C6;&#x5199;&#x6CD5;<ul>
+<li>RUN apt-get update &amp;&amp; apt-get install -y package-bar package-foo</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#x4F8B;&#x5B50;:</p>
+<pre class="language-"><code class="lang-shell">RUN <span class="token function">apt-get</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">apt-get</span> <span class="token function">install</span> -y <span class="token punctuation">\</span>
+    aufs-tools <span class="token punctuation">\</span>
+    automake <span class="token punctuation">\</span>
+    btrfs-tools <span class="token punctuation">\</span>
+    build-essential <span class="token punctuation">\</span>
+    <span class="token function">curl</span> <span class="token punctuation">\</span>
+    dpkg-sig <span class="token punctuation">\</span>
+    <span class="token function">git</span> <span class="token punctuation">\</span>
+    iptables <span class="token punctuation">\</span>
+    libapparmor-dev <span class="token punctuation">\</span>
+    libcap-dev <span class="token punctuation">\</span>
+    libsqlite3-dev <span class="token punctuation">\</span>
+    <span class="token assign-left variable">lxc</span><span class="token operator">=</span><span class="token number">1.0</span>* <span class="token punctuation">\</span>
+    mercurial <span class="token punctuation">\</span>
+    parallel <span class="token punctuation">\</span>
+    reprepro <span class="token punctuation">\</span>
+    ruby1.9.1 <span class="token punctuation">\</span>
+    ruby1.9.1-dev <span class="token punctuation">\</span>
+    <span class="token assign-left variable">s3cmd</span><span class="token operator">=</span><span class="token number">1.1</span>.0*
+</code></pre>
+<ul>
+<li>CMD: &#x63A8;&#x8350;&#x4F7F;&#x7528;CMD [&#x201C;executable&#x201D;, &#x201C;param1&#x201D;, &#x201C;param2&#x201D;&#x2026;]&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;CMD [&#x201C;param&#x201D;, &#x201C;param&#x201D;]&#x5219;&#x914D;&#x5408;ENTRYPOINT&#x4F7F;&#x7528;</li>
+<li>EXPOSE: Dockerfile &#x6307;&#x5B9A;&#x8981;&#x516C;&#x5F00;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x4F7F;&#x7528;docker run&#x65F6;&#x6307;&#x5B9A;&#x6620;&#x5C04;&#x5230;&#x5BBF;&#x4E3B;&#x673A;&#x7684;&#x7AEF;&#x53E3;&#x5373;&#x53EF;</li>
+<li>ENV: &#x4E3A;&#x4E86;&#x4F7F;&#x65B0;&#x7684;&#x8F6F;&#x4EF6;&#x66F4;&#x5BB9;&#x6613;&#x8FD0;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ENV&#x66F4;&#x65B0;PATH&#x53D8;&#x91CF;&#x3002;&#x5982;ENV PATH /usr/local/nginx/bin:$PATH&#x786E;&#x4FDD;CMD [&quot;nginx&quot;]&#x5373;&#x53EF;&#x8FD0;&#x884C;</li>
+</ul>
+<p>ENV&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF1A;</p>
+<pre class="language-"><code class="lang-shell">ENV PG_MAJOR <span class="token number">9.3</span>
+ENV PG_VERSION <span class="token number">9.3</span>.4
+RUN <span class="token function">curl</span> -SL http://example.com/postgres-<span class="token variable">$PG_VERSION</span>.tar.xz <span class="token operator">|</span> <span class="token function">tar</span> -xJC /usr/src/postgress <span class="token operator">&amp;&amp;</span> &#x2026;
+ENV <span class="token environment constant">PATH</span> /usr/local/postgres-<span class="token variable">$PG_MAJOR</span>/bin:<span class="token environment constant">$PATH</span>
+</code></pre>
+<ul>
+<li>ADDorCOPY:ADD&#x6BD4;COPY&#x591A;&#x4E00;&#x4E9B;&#x7279;&#x6027;&#x300C;tar &#x6587;&#x4EF6;&#x81EA;&#x52A8;&#x89E3;&#x5305;&#x548C;&#x652F;&#x6301;&#x8FDC;&#x7A0B; URL&#x300D;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B; URL</li>
+</ul>
+<p>&#x5982;&#x4E0D;&#x63A8;&#x8350;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;:</p>
+<pre class="language-"><code class="lang-shell">ADD http://example.com/big.tar.xz /usr/src/things/
+RUN <span class="token function">tar</span> -xJf /usr/src/things/big.tar.xz -C /usr/src/things
+RUN <span class="token function">make</span> -C /usr/src/things all
+</code></pre>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528; curl &#x6216;&#x8005; wget &#x66FF;&#x6362;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;:</p>
+<pre class="language-"><code class="lang-shell">RUN <span class="token function">mkdir</span> -p /usr/src/things <span class="token punctuation">\</span>
+    <span class="token operator">&amp;&amp;</span> <span class="token function">curl</span> -SL http://example.com/big.tar.gz <span class="token punctuation">\</span>
+    <span class="token operator">|</span> <span class="token function">tar</span> -xJC /usr/src/things <span class="token punctuation">\</span>
+    <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> -C /usr/src/things all
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x6DFB;&#x52A0; tar &#x6587;&#x4EF6;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;COPY&#x3002;</p>
+<blockquote>
+<p>&#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://www.docker.org.cn/dockerppt/114.html" target="_blank">http://www.docker.org.cn/dockerppt/114.html</a> </p>
+</blockquote>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; <a href="https://dolojia.github.io/gitbook" target="_blank">DoloJia</a> 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-10-17 16:51:40
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Docker常用命令介绍.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Docker常用命令介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dockerfile","level":"2.3.3","depth":2,"next":{"title":"Nginx","level":"2.4","depth":1,"ref":"","articles":[{"title":"openReaty安装","level":"2.4.1","depth":2,"path":"source/Nginx/openReaty安装.md","ref":"./source/Nginx/openReaty安装.md","articles":[]}]},"previous":{"title":"Docker常用命令介绍","level":"2.3.2","depth":2,"path":"source/Docker/Docker常用命令介绍.md","ref":"./source/Docker/Docker常用命令介绍.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","emphasize","favicon","yahei","autotheme","-lunr","search-plus","prism","highlight","github-buttons","splitter","-sharing","sharing-plus","tbfed-pagefooter","book-summary-scroll-position-saver","ga","baidu","-donate","anchors","anchor-navigation-ex","sitemap-general","copy-code-button","multipart"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy <a href='https://dolojia.github.io/gitbook' target='_blank'>DoloJia</a> 2019","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"shell":"bash"}},"emphasize":{},"github":{"url":"https://dolojia.github.io/gitbook"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"multipart":{},"donate":{"wechat":"/myBook/assets/weixin.png","alipay":"/myBook/assets/alipay.jpeg","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"sitemap-general":{"prefix":"https://dolojia.github.io/gitbook"},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"family":"STKAITI","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"assets/images/favicon.ico","bookmark":"assets/images/favicon.ico","appleTouch":"assets/images/apple-touch-icon.png","appleTouchMore":{"120x120":"assets/images/apple-touch-icon-120x120.png","180x180":"assets/images/apple-touch-icon-180x180.png"}},"github-buttons":{"buttons":[{"user":"dolojia","repo":"gitbook","type":"star","size":"small","count":true}]},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-142790104-1"},"autotheme":{"night":[20,21,22,23,0,1,2,3,4,5],"sepia":[6,7,8,18,19,19],"white":[9,10,11,12,13,14,15,16,17]},"baidu":{"token":"f1f256f18b7899e11647d6ec1f3ded2f"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"DoloJia","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"DoloJia开发笔记","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/dolojia","个人博客":"#"}},"gitbook":"3.x.x","description":"DoloJia_开发笔记","structure1":{"readme":"README.md"}},"file":{"path":"source/Docker/Dockerfile.md","mtime":"2019-10-17T08:51:40.718Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T09:20:48.614Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-autotheme/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-baidu/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
