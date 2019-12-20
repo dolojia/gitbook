@@ -4,11 +4,15 @@
 * Git
     * [忽略已经被git管理的文件](./source/Git/忽略已经被git管理的文件.md)
     * [全局设置用户名邮箱配置](./source/Git/全局设置用户名邮箱配置.md)
+    * [giblab邮箱设置](./source/Git/giblab邮箱设置.md)
 * IDEA
     * [IDEA模板设置](./source/IDEA/IDEA模板设置.md)
 * 开源项目
 
 -----
+* Java
+    * [Java多线程使用](./source/Java/多线程使用.md)
+    * [redis单节点配置](./source/Java/redis单节点配置.md)
 * Windows
     * [Hyper-V使用](./source/Windows/Hyper-V使用.md)
 * Linux
