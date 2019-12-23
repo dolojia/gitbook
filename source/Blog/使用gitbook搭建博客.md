@@ -231,6 +231,7 @@ v10.16.0
      ```shell
      cd gitbook &&\
      git checkout master &&\
+     git pull &&\
      gitbook init &&\
      gitbook build &&\
      git add . &&\

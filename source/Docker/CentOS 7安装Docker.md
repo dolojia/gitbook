@@ -66,10 +66,31 @@ $ sudo yum remove docker \
 #### 6.启动 Docker 后台服务
 
 ```shell
-[root@localhost ~]# sudo systemctl start docker
+[root@localhost ~]# systemctl start docker.service
+#添加开机启动服务
+[root@localhost ~]# systemctl enable docker.service
 ```
 
-#### 7.测试运行 hello-world
+#### 7.容器随docker启动而启动
+
+> --restart=always
+>
+> ```
+> Flag	Description
+> no		不自动重启容器. (默认value)
+> on-failure 	容器发生error而退出(容器退出状态不为0)重启容器
+> unless-stopped 	在容器已经stop掉或Docker stoped/restarted的时候才重启容器
+> always 	在容器已经stop掉或Docker stoped/restarted的时候才重启容器
+> ```
+
+##### 如果已经过运行的项目
+
+```
+#如果已经启动的项目，则使用update更新：
+docker update --restart=always CONTAINER_NAME
+```
+
+#### 8.测试运行 hello-world
 
 ```shell
 [root@localhost ~]# docker run hello-world
@@ -111,7 +132,7 @@ For more examples and ideas, visit:
 
 ## 镜像加速
 
-鉴于国内网络问题，后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决，我使用的是网易的镜像地址：**http://hub-mirror.c.163.com**。
+鉴于国内网络问题，后续拉取 Docker 镜像十分缓慢，我们可以需要配置加速器来解决
 
 新版的 Docker 使用 /etc/docker/daemon.json（Linux） 或者 %programdata%\docker\config\daemon.json（Windows） 来配置 Daemon。
 
@@ -119,9 +140,24 @@ For more examples and ideas, visit:
 
 ```shell
 {
-  "registry-mirrors": ["http://hub-mirror.c.163.com"]
+  "registry-mirrors": ["加速器地址"]
 }
 ```
+
+修改之后重启docker
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+获取阿里加速器地址
+
+> 登录阿里云 https://cr.console.aliyun.com/  
+>
+> 通过搜索镜像加速器找到功能入口
+>
+> 根据提示获取地址
 
 ## 删除 Docker CE
 
