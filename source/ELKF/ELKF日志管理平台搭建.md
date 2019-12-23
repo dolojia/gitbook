@@ -310,11 +310,14 @@ i18n.locale: "zh-CN"
 
 ```shell
 #后台启动
-[elk@localhost kibana]$ nohup ./bin/kibana &
+[elk@localhost kibana]$ nohup ./bin/kibana --allow-root &
 #查看应用进程
 [root@localhost kibana]# ps -aux|grep kibana
 #杀死进程
 [root@localhost kibana]# kill -9 进程号
+
+#以上查不到进程则使用如下命令
+[root@localhost config]# netstat -tunlp|grep 5601
 ```
 
 #### 5.Kibana设置

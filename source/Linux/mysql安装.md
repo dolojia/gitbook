@@ -111,6 +111,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root1'@'%' IDENTIFIED BY 'root' WITH GRANT OPTIO
 
 
 
+修改数据库密码
+
+```sql
+ --修改root用户的密码为root
+ set password for root@localhost = password('root');
+```
+
 
 
 
